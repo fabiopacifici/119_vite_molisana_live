@@ -1,0 +1,20 @@
+@use './variables' as *;
+
+header {
+  background-color: $light;
+  text-align: center;
+
+  nav {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+
+    a {
+      text-decoration: none;
+    }
+
+  }
+
+}

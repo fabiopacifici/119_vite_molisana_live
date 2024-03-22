@@ -1,0 +1,17 @@
+@use './variables' as *;
+
+footer {
+  background-color: $light;
+  padding: 1rem 0;
+  background-image: url('/images/footer-bg.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  ul {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
