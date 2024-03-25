@@ -1,10 +1,16 @@
 <script>
 import AppLogo from './AppLogo.vue'
+import { state } from '../state.js'
 
 export default {
   name: 'AppFooter',
   components: {
     AppLogo
+  },
+  data(){
+    return {
+      state
+    }
   }
 }
 </script>
@@ -20,6 +26,8 @@ export default {
 
         <div class="col">
           <h4>Pastificio</h4>
+          <p>{{state.message}}</p>
+          <p>We have: {{state.products.length}} products</p>
           <ul class="list-unstyled">
             <li><a href="">Lorem.</a></li>
             <li><a href="">Lorem.</a></li>

@@ -1,6 +1,12 @@
 <script>
 import ProductCard from './ProductCard.vue';
-import { products } from '../data.js';
+// no longer in use as we fetch data from the internal json server 
+//import { products } from '../data.js';
+// moved into the global state
+//import axios from 'axios';
+
+import { state } from '../state.js'
+
 export default {
   name: 'AppMain',
   components: {
@@ -8,8 +14,23 @@ export default {
   },
   data() {
     return {
-      products
+      state
+      // products
+      //products: []
     }
+  },
+
+
+  mounted() {
+
+    console.log(state);
+    this.state.getProducts(this.state.base_products_api_url)
+    /* 
+        axios.get('http://localhost:3000/products')
+        .then(response => {
+          console.log(response)
+          this.products = response.data
+        }) */
   }
 
 }
@@ -20,18 +41,20 @@ export default {
     <section class="products my-4">
 
       <div class="container">
+
+        {{ state.message }}
         <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-1">
 
 
 
           <!-- Sono vincolato alla struttura dell'oggetto che passo per recuperare i valori nel componente  ProductCard -->
-          <ProductCard :product="product" :key="product.id" v-for="product in products" />
+          <ProductCard :product="product" :key="product.id" v-for="product in state.products" />
 
           <!-- 
             
             Piú flessibile perché non devo avere per forza un oggetto strutturato 
             con delle proprietá specifiche
-            <ProductCard :image="product.src" :title="product.title"  :key="product.id" v-for="product in products" /> -->
+            <ProductCard :image="product.image" :title="product.title"  :key="product.id" v-for="product in products" /> -->
 
           <!--  
           <div class="col" v-for="product in products">
