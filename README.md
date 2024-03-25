@@ -5,6 +5,8 @@
 
 ## 1. Setup json server
 
+Documentazione: <https://github.com/typicode/json-server/tree/v0>
+
 ### Install json server and setup the package.json script
 
 The installation is global, meaning that you only need to install it once.accordion
@@ -71,6 +73,7 @@ Both commands will lock your terminal so to get access to it again you need to p
 
 ## Setup the global state
 
+Documentazione:<https://vuejs.org/guide/scaling-up/state-management.html>
 Create a new javascript file inside the `src` folder called `state.js`
 
 ```bash
